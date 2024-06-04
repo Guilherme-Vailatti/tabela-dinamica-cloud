@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Interativa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <table id="interactiveTable">
+        <thead>
+            <tr>
+                <th><button>AMBIENTES</button></th>
+                <th><button>SEGUNDA-FEIRA</button></th>
+                <th><button>TERÇA-FEIRA</button></th>
+                <th><button>QUARTA-FEIRA</button></th>
+                <th><button>QUINTA-FEIRA</button></th>
+                <th><button>SEXTA-FEIRA</button></th>
+                <th><button>SÁBADO</button></th>
+                <th><button disabled>DOMINGO</button></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ANTARES</td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>SIRIUS</td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>BELLATRIX</td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>TAURI</td>
+                <td></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ELECTRA</td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ALUDRA</td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ALTAIR</td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>VEGA</td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ORION</td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>GAMMA</td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>KONVIVA</td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td></td>
+                <td><img class="ckecked" src="images/check.png"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+<div class="botoes-inferiores" id="botao-inferior">
+    <button class="botao-quinta-verde" onclick="(1)">GMUDS APROVADAS NA <b>QUINTA-FEIRA</b> ANTERIOR</button>
+    <button class="botao-terca-azul" onclick="(2)">GMUDS APROVADAS NA <b>TERÇA-FEIRA</b> ANTERIOR</button>
+</div>
+
+<div class="botoes-inferiores2">
+    <button class="botao-cab-inferior" onclick="">CAB SEMANAL</button>
+</div>
+  
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('thead th button');
+
+    buttons.forEach((button, index) => {
+        if (index === 0) {
+            button.addEventListener('click', () => {
+                resetColumns();
+                highlightButton(index);
+            }); // O botão "Ambientes" reseta a visualização
+        } else if (index !== 7) { // Ignorando o botão "Domingo"
+            button.addEventListener('click', () => {
+                emphasizeColumn(index);
+                highlightButton(index);
+            });
+        }
+    });
+
+    // Desabilitar o botão "Domingo"
+    buttons[7].disabled = true;
+
+    // Adicionar eventos aos botões inferiores
+    document.querySelector('.botao-quinta-verde').addEventListener('click', () => {
+        showGreenColumns();
+        highlightMultipleButtons([1, 2, 3]); // Destaca os botões das colunas verdes
+    });
+    document.querySelector('.botao-terca-azul').addEventListener('click', () => {
+        showBlueColumns();
+        highlightMultipleButtons([4, 5, 6]); // Destaca os botões das colunas azuis
+    });
+    document.querySelector('.botao-cab-inferior').addEventListener('click', () => {
+        showTuesdayThursdayColumns();
+        highlightMultipleButtons([2, 4]); // Destaca os botões das colunas terça e quinta
+    });
+});
+
+function emphasizeColumn(columnIndex) {
+    const table = document.getElementById('interactiveTable');
+    const rows = table.rows;
+
+    for (let i = 1; i < rows.length; i++) { // Começa em 1 para ignorar o cabeçalho
+        const cells = rows[i].cells;
+        for (let j = 1; j < cells.length; j++) { // Começa em 1 para ignorar a coluna "Ambientes"
+            if (j === columnIndex) {
+                cells[j].classList.remove('opaco');
+            } else {
+                cells[j].classList.add('opaco');
+            }
+        }
+    }
+}
+
+function resetColumns() {
+    const table = document.getElementById('interactiveTable');
+    const rows = table.rows;
+
+    for (let i = 1; i < rows.length; i++) { // Começa em 1 para ignorar o cabeçalho
+        const cells = rows[i].cells;
+        for (let j = 1; j < cells.length; j++) { // Começa em 1 para ignorar a coluna "Ambientes"
+            cells[j].classList.remove('opaco');
+        }
+    }
+}
+
+function showGreenColumns() {
+    const table = document.getElementById('interactiveTable');
+    const rows = table.rows;
+    const greenColumns = [1, 2, 3]; // Índices das colunas verdes (segunda, terça, quarta)
+
+    for (let i = 1; i < rows.length; i++) { // Começa em 1 para ignorar o cabeçalho
+        const cells = rows[i].cells;
+        for (let j = 1; j < cells.length; j++) { // Começa em 1 para ignorar a coluna "Ambientes"
+            if (greenColumns.includes(j)) {
+                cells[j].classList.remove('opaco');
+            } else {
+                cells[j].classList.add('opaco');
+            }
+        }
+    }
+}
+
+function showBlueColumns() {
+    const table = document.getElementById('interactiveTable');
+    const rows = table.rows;
+    const blueColumns = [4, 5, 6]; // Índices das colunas azuis (quinta, sexta, sábado)
+
+    for (let i = 1; i < rows.length; i++) { // Começa em 1 para ignorar o cabeçalho
+        const cells = rows[i].cells;
+        for (let j = 1; j < cells.length; j++) { // Começa em 1 para ignorar a coluna "Ambientes"
+            if (blueColumns.includes(j)) {
+                cells[j].classList.remove('opaco');
+            } else {
+                cells[j].classList.add('opaco');
+            }
+        }
+    }
+}
+
+function showTuesdayThursdayColumns() {
+    const table = document.getElementById('interactiveTable');
+    const rows = table.rows;
+    const selectedColumns = [2, 4]; // Índices das colunas terça e quinta
+
+    for (let i = 1; i < rows.length; i++) { // Começa em 1 para ignorar o cabeçalho
+        const cells = rows[i].cells;
+        for (let j = 1; j < cells.length; j++) { // Começa em 1 para ignorar a coluna "Ambientes"
+            if (selectedColumns.includes(j)) {
+                cells[j].classList.remove('opaco');
+            } else {
+                cells[j].classList.add('opaco');
+            }
+        }
+    }
+}
+
+function highlightButton(index) {
+    const buttons = document.querySelectorAll('thead th button');
+    buttons.forEach((button, idx) => {
+        if (idx === index) {
+            button.classList.add('highlight');
+        } else {
+            button.classList.remove('highlight');
+        }
+    });
+}
+
+function highlightMultipleButtons(indices) {
+    const buttons = document.querySelectorAll('thead th button');
+    buttons.forEach((button, idx) => {
+        if (indices.includes(idx)) {
+            button.classList.add('highlight');
+        } else {
+            button.classList.remove('highlight');
+        }
+    });
+}
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
